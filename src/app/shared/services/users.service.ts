@@ -13,7 +13,7 @@ export class UsersService {
   }
 
   seed() {
-    this.seedUsers.remove
+    this.seedUsers.remove;
     this.seedUsers.push({
       "FirstName": "Gosho",
       "LastName": "Ivanov",

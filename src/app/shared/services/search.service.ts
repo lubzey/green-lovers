@@ -10,13 +10,13 @@ import { PlantInstancesService } from './plant-instances.service';
 @Injectable()
 export class SearchService {
 
-  constructor(
-    private af: AngularFire,
-    private userSearch: UsersService,
-    private plantInstancesService: PlantInstancesService) { }
+  // constructor(
+  //   private af: AngularFire,
+  //   private userSearch: UsersService,
+  //   private plantInstancesService: PlantInstancesService) { }
 
-  search(term: string) {
-    return this.userSearch.getUsers()
-    .merge( this.plantInstancesService.getPlants());
-  }
+  // search(term: string) {
+  //   return this.userSearch.getUsers()
+  //   .merge( this.plantInstancesService.getPlants());
+  // }
 }

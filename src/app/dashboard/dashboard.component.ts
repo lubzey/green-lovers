@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { PlantInstancesService } from '../shared/services/plant-instances.service';
+import { UsersService } from '../shared/services/users.service';
+
 
 import { PlantInstance } from '../shared/models/plant.model';
+import { User } from '../shared/models/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,15 +18,21 @@ export class DashboardComponent implements OnInit {
   plantInstances: Observable<PlantInstance[]>;
   filteredPlantInstances: Observable<PlantInstance[]>;
 
-  constructor(private plantInstancesService: PlantInstancesService) { }
+  userInstances: Observable<User[]>;
+
+  constructor(
+    private plantInstancesService: PlantInstancesService,
+    private usersService: UsersService
+  ) { }
 
   ngOnInit(): void {
     this.plantInstancesService.seed();
-    
+    this.usersService.seed();    
+
     this.plantInstances = this.plantInstancesService.getPlants();
   }
 
-  add(){
+  add() {
     this.plantInstancesService.addPlant();
   }
 
