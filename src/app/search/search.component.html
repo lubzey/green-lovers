@@ -2,3 +2,6 @@
     id="search-box"
     #searchBox
     (keyup)="search(searchBox.value)">
+<div *ngFor="let result of results" >
+    {{hero.name}}
+</div>
