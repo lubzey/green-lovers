@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app-component/app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { LoginComponent } from './login/login.component';
 import { PlantsWikiComponent } from './plants-wiki/plants-wiki.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -11,7 +13,7 @@ import { UserPhotosComponent } from './user-profile/user-photos/user-photos.comp
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: AppComponent },
+    { path: 'home', component: DashboardComponent },
     { path: 'login', component: LoginComponent },
     { path: 'plants', component: PlantsWikiComponent },
     { path: 'user', component: UserProfileComponent },
