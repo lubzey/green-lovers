@@ -22,6 +22,7 @@ import { firebaseConfig } from "../environments/firebase.config";
 
 import { PlantsOnlyPipe } from './shared/pipes/plants-only.pipe';
 import { UsersOnlyPipe } from './shared/pipes/users-only.pipe';
+import { UsersService } from './shared/services/users.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ imports: [
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [PlantInstancesService, SearchService],
+  providers: [PlantInstancesService, UsersService, SearchService],
   bootstrap: [AppComponent]
 })
 
