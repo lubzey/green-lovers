@@ -15,14 +15,11 @@ import { UserGardenComponent } from './user-profile/user-garden/user-garden.comp
 import { UserPhotosComponent } from './user-profile/user-photos/user-photos.component';
 import { PlantsWikiComponent } from './plants-wiki/plants-wiki.component';
 
-<<<<<<< HEAD
-import { DataService } from './shared/services/data.service';
 import { SearchService } from './shared/services/search.service';
-=======
 import { PlantInstancesService } from './shared/services/plant-instances.service';
->>>>>>> c76d2339a170222f1c10bc49318ecce17ca6d39c
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environments/firebase.config";
+
 import { PlantsOnlyPipe } from './shared/pipes/plants-only.pipe';
 import { UsersOnlyPipe } from './shared/pipes/users-only.pipe';
 
@@ -49,11 +46,7 @@ imports: [
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-<<<<<<< HEAD
-  providers: [DataService, SearchService],
-=======
-  providers: [PlantInstancesService],
->>>>>>> c76d2339a170222f1c10bc49318ecce17ca6d39c
+  providers: [PlantInstancesService, SearchService],
   bootstrap: [AppComponent]
 })
 
