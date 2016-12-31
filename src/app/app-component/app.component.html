@@ -1,4 +1,4 @@
-<ul>
+<!--<ul>
     <li *ngFor="let plantInstance of plantInstances | async">
         {{ plantInstance.$key }}
         <div>Ownerr:
@@ -8,8 +8,14 @@
         <div>Common name: {{ plantInstance.commonName }}</div>
         <button (click)="deletePlantInstance(plantInstance.$key)">Delete <strong>{{ plantInstance.$key }}</strong></button>
     </li>
-</ul>
+</ul>-->
 
 <div>test</div>
+
+<nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/plants" routerLinkActive="active">Plants</a>
+    <a routerLink="/Users" routerLinkActive="active">Users</a>
+</nav>
 
 <router-outlet></router-outlet>
