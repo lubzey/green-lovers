@@ -15,7 +15,7 @@ import { UserGardenComponent } from './user-profile/user-garden/user-garden.comp
 import { UserPhotosComponent } from './user-profile/user-photos/user-photos.component';
 import { PlantsWikiComponent } from './plants-wiki/plants-wiki.component';
 
-import { DataService } from './shared/services/data.service';
+import { PlantInstancesService } from './shared/services/plant-instances.service';
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environments/firebase.config";
 
@@ -39,7 +39,7 @@ imports: [
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [DataService],
+  providers: [PlantInstancesService],
   bootstrap: [AppComponent]
 })
 

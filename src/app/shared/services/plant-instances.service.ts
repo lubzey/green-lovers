@@ -2,33 +2,45 @@ import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 @Injectable()
-export class DataService {
+export class PlantInstancesService {
   seedPlantInstances: FirebaseListObservable<any[]>;
   seedPlant: FirebaseObjectObservable<any>;
   plantInstances: FirebaseListObservable<any[]>;
 
-  constructor(af: AngularFire) {
+  constructor(private af: AngularFire) {
     this.seedPlant = af.database.object('/greenloversclub');
-    this.seedPlantInstances = af.database.list('/plantinstances');
+    this.seedPlantInstances = af.database.list('/plant-instances');
   }
 
   seed() {
-    this.seedPlantInstances.update('vercheto', {
+    this.seedPlantInstances.push({
+      name: 'vercheto',
       birthdate: '01.09.2014',
       owner: 'lubzey',
       commonName: 'Aloe vera'
     });
 
-    this.seedPlantInstances.update('palmichka', {
+    this.seedPlantInstances.push({
+      name: 'palmichka',
       birthdate: 'unknown',
       owner: 'lubzey',
       commonName: 'Dragon tree'
     });
 
-    this.seedPlantInstances.update('princ limon', {
+    this.seedPlantInstances.push({
+      name: 'princ limon',
       birthdate: '03.03.2016',
       owner: 'lubzey',
       commonName: 'Lemon'
+    });
+  }
+
+  addPlant() {
+    this.seedPlantInstances.push({
+      name: 'Black pearl',
+      birthdate: '01.02.2015',
+      owner: 'lubzey',
+      commonName: 'Chilli pepper'
     });
   }
 

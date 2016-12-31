@@ -1,6 +1,10 @@
+<input placeholder="Search" (keyup)="search(input.value)" #input>
+
+<div>Plant Instances</div>
 <ul>
     <li *ngFor="let plantInstance of plantInstances | async">
         {{ plantInstance.$key }}
+        <div>Name: {{ plantInstance.name }}</div>
         <div>Owner:
             <input type="text" #newplantowner placeholder="{{ plantInstance.owner }}" />
             <button (click)="changePlantOwner(plantInstance.$key, newplantowner.value)">Change owner</button></div>
@@ -9,3 +13,5 @@
         <button (click)="deletePlantInstance(plantInstance.$key)">Delete <strong>{{ plantInstance.$key }}</strong></button>
     </li>
 </ul>
+
+<button (click)="add()">Add</button>
