@@ -1,34 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-
-import { DataService } from '../shared/services/data.service';
-
-import { PlantInstance } from '../shared/models/plant-instance.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: require('./app.component.html'),
   styles: [require('./app.component.css')],
-  providers: [DataService]
+  providers: []
 })
 
-export class AppComponent implements OnInit {
-  plantInstances: Observable<PlantInstance[]>;
-
-  constructor(private dataservice: DataService) { }
-
-  ngOnInit(): void {
-    this.dataservice.seed();
-    this.plantInstances = this.dataservice.getPlants();
-  }
-
-  changePlantOwner(key: string, newOwner: string): void {
-    this.dataservice.plantInstances.update(key, { owner: newOwner });
-  }
-
-  deletePlantInstance(key: string): void {
-    this.dataservice.plantInstances.remove(key);
-  }
-
-
+export class AppComponent {
 }
