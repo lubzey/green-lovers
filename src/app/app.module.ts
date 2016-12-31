@@ -9,12 +9,14 @@ import { firebaseConfig } from "../environments/firebase.config";
 import { AppRoutingModule } from './app.routing';
 import { PlantsComponent } from './plants/plants.component';
 import { UsersComponent } from './users/users.component';
+import { DataService } from './shared/services/data.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PlantsComponent,
-    UsersComponent
+    AppComponent
+    // PlantsComponent,
+    // UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,7 @@ import { UsersComponent } from './users/users.component';
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

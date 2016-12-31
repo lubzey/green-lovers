@@ -33,14 +33,14 @@ export class DataService {
   }
 
   getPlants() {
-    return this.plantInstances;
+    return this.seedPlantInstances;
   }
 
   changePlantOwner(key: string, newOwner: string) {
-    this.plantInstances.update(key, { owner: newOwner });
+    this.seedPlantInstances.update(key, { owner: newOwner });
   }
 
   deletePlantInstance(key: string) {
-    this.plantInstances.remove(key);
+    this.seedPlantInstances.remove(key);
   }
 }
