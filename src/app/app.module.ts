@@ -7,10 +7,14 @@ import { AngularFireModule } from "angularfire2/index";
 import { firebaseConfig } from "../environments/firebase.config";
 
 import { AppRoutingModule } from './app.routing';
+import { PlantsComponent } from './plants/plants.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlantsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from './shared/data/data.service';
+import { DataService } from './shared/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { DataService } from './shared/data/data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  plantInstances: Plant[] = [];
+  plantInstances: any[] = [];
 
   constructor(private DataService) { }
 
