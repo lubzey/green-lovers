@@ -16,8 +16,11 @@ import { UserPhotosComponent } from './user-profile/user-photos/user-photos.comp
 import { PlantsWikiComponent } from './plants-wiki/plants-wiki.component';
 
 import { DataService } from './shared/services/data.service';
+import { SearchService } from './shared/services/search.service';
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environments/firebase.config";
+import { PlantsOnlyPipe } from './shared/pipes/plants-only.pipe';
+import { UsersOnlyPipe } from './shared/pipes/users-only.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { firebaseConfig } from "../environments/firebase.config";
     UserGardenComponent,
     UserPhotosComponent,
     PlantsWikiComponent,
+    UsersOnlyPipe,
+    PlantsOnlyPipe,
+    UsersOnlyPipe,
 ],
 imports: [
     BrowserModule,
@@ -39,7 +45,7 @@ imports: [
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [DataService],
+  providers: [DataService, SearchService],
   bootstrap: [AppComponent]
 })
 

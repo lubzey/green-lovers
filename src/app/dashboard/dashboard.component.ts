@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { DataService } from '../shared/services/data.service';
 
-import { PlantInstance } from '../shared/models/plant-instance.model';
+import { PlantInstance } from '../shared/models/plant.model';
 
 @Component({
   selector: 'app-dashboard',
