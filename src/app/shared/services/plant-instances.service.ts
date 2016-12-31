@@ -9,7 +9,6 @@ export class PlantInstancesService {
 
   constructor(private af: AngularFire) {
     const promise = af.database.list('/plant-instances').remove();
-    this.seedPlant = af.database.object('/greenloversclub');
     this.seedPlantInstances = af.database.list('/plant-instances');
   }
 
