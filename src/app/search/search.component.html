@@ -2,9 +2,9 @@
     id="search-box"
     #searchBox
     (keyup)="search(searchBox.value)">
-<div *ngFor="let result of searchResults | usersOnly | async " >
+<div *ngFor="let result of userResults  | async " >
     {{result.firstName}}
 </div>
-<!--<div *ngFor="let result of searchResults | plantsOnly | async " >
+<div *ngFor="let result of plantResults | async " >
     {{result.commonName}}
-</div>-->
+</div>

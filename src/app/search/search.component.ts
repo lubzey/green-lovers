@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SearchService } from './../shared/services/search.service';
+import { PlantInstancesService } from './../shared/services/plant-instances.service';
+import { UsersService } from './../shared/services/users.service';
 
 import { PlantInstance } from './../shared/models/plant.model';
 import { User } from './../shared/models/user.model';
@@ -17,9 +19,11 @@ import { Subject } from 'rxjs';
 export class SearchComponent implements OnInit {
 
   private searchTerms = new Subject<string>();
-  searchResults: Observable<any[]>;
+  userResults: Observable<any[]>;
+  plantResults: Observable<any[]>;
 
-  constructor(private searchService: SearchService,
+  constructor(private usersService: UsersService,
+    private plantInstanceService: PlantInstancesService,
     private router: Router) { }
 
   // Push a search term into the observable stream.
@@ -28,12 +32,11 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.searchResults = this.searchTerms
+    this.userResults = this.searchTerms
       .debounceTime(300)
       .distinctUntilChanged()
       .switchMap(term => term
-        ? this.searchService.search(term)
+        ? this.usersService.getUsers(term)
         : Observable.of<any[]>([]))
       .catch(error => {
         // TODO: real error handling
@@ -41,8 +44,16 @@ export class SearchComponent implements OnInit {
         return Observable.of<any[]>([]);
       });
 
-      
+    this.plantResults = this.searchTerms
+      .debounceTime(300)
+      .distinctUntilChanged()
+      .switchMap(term => term
+        ? this.plantInstanceService.getPlants(term)
+        : Observable.of<any[]>([]))
+      .catch(error => {
+        // TODO: real error handling
+        console.log(error);
+        return Observable.of<any[]>([]);
+      });
   }
-
-
 }

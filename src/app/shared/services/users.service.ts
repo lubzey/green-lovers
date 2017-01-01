@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { User } from './../models/user.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UsersService {
@@ -51,14 +52,19 @@ export class UsersService {
         });
     }
 
-    searchUsers(term: string) {
-        return this.seedUsers
-        .map(x => x.filter(x => 
-        x.firstName.toLowerCase().includes(term.toLowerCase())))
-    }
+    // searchUsers(term: string): Observable<User[]> {
+    //     return this.seedUsers
+    //         .map(x => x.filter(x =>
+    //             x.firstName.toLowerCase().includes(term.toLowerCase())))
+    // }
 
-    getUsers() {
-        return this.seedUsers;
+    getUsers(term?: string) {
+        return term ?
+            this.seedUsers
+                .map(x => x.filter(x =>
+                    x.firstName.toLowerCase()
+                        .includes(term.toLowerCase())))
+            : this.seedUsers;
     }
 
     deleteUser(key: string) {

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { Observable } from 'rxjs';
+import { PlantInstance } from './../models/plant.model';
 
 @Injectable()
 export class PlantInstancesService {
@@ -47,15 +49,20 @@ export class PlantInstancesService {
     });
   }
 
-searchUsers(term: string) {
-        return this.seedPlantInstances
-        .map(x => x.filter(x => 
-        x.commonName.toLowerCase().includes(term.toLowerCase())))
-    }
+// searchPlants(term: string): Observable<PlantInstance[]> {
+//         return this.seedPlantInstances
+//         .map(x => x.filter(x => 
+//         x.commonName.toLowerCase().includes(term.toLowerCase())))
+//     }
 
-  getPlants() {
-    return this.seedPlantInstances;
-  }
+  getPlants(term?: string) {
+        return term ?
+            this.seedPlantInstances
+                .map(x => x.filter(x =>
+                    x.commonName.toLowerCase()
+                        .includes(term.toLowerCase())))
+            : this.seedPlantInstances;
+    }
 
   changePlantOwner(key: string, newOwner: string) {
     this.seedPlantInstances.update(key, { owner: newOwner })
