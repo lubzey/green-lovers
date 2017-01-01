@@ -8,8 +8,7 @@ import { PlantInstance } from './../models/plant.model';
 })
 export class PlantsOnlyPipe implements PipeTransform {
 
-  transform(value: Observable<any[]>): Observable<any[]> {
-    return value.filter(x => x instanceof PlantInstance);
+  transform(value: any): PlantInstance {
+    return value.switchMap(x => x.filter(x => x instanceof PlantInstance));
   }
-
 }
