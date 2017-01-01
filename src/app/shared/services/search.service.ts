@@ -12,11 +12,11 @@ export class SearchService {
 
   constructor(
     private af: AngularFire,
-    private userSearch: UsersService,
+    private usersSearch: UsersService,
     private plantInstancesService: PlantInstancesService) { }
 
   search(term: string) {
-    return this.userSearch.searchUsers(term);
+    return this.usersSearch.searchUsers(term);
       // .merge(this.plantInstancesService.getPlants());
   }
 }

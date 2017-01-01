@@ -8,8 +8,11 @@ export class PlantInstancesService {
   plantInstances: FirebaseListObservable<any[]>;
 
   constructor(private af: AngularFire) {
-    this.seedPlant = af.database.object('/greenloversclub');
     this.seedPlantInstances = af.database.list('/plant-instances');
+  }
+
+  removeAll() {
+    this.af.database.list('/plant-instances').remove();
   }
 
   seed() {
@@ -55,10 +58,14 @@ searchUsers(term: string) {
   }
 
   changePlantOwner(key: string, newOwner: string) {
-    this.seedPlantInstances.update(key, { owner: newOwner });
+    this.seedPlantInstances.update(key, { owner: newOwner })
+    .then(x => console.log('Plant edited'))
+    .catch(error => console.log(error));
   }
 
   deletePlantInstance(key: string) {
-    this.seedPlantInstances.remove(key);
+    this.seedPlantInstances.remove(key)
+    .then(x => console.log('Plant removed'))
+    .catch(error => console.log(error));
   }
 }
