@@ -4,11 +4,9 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 @Injectable()
 export class UsersService {
   seedUsers: FirebaseListObservable<any[]>;
-  seedUser: FirebaseObjectObservable<any>;
-  users: FirebaseListObservable<any[]>;
 
   constructor(private af: AngularFire) {
-    this.seedUser = af.database.object('/greenloversclub');
+    const remove = af.database.list('/users').remove();
     this.seedUsers = af.database.list('/users');
   }
 
