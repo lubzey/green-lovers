@@ -14,30 +14,30 @@ export class UsersService {
     }
 
     seed() {
-        this.seedUsers.push([{
+        this.seedUsers.push({
             "firstName": "Gosho",
             "lastName": "Ivanov",
             "birthDate": "01.09.2014",
             "avatar": "https://goo.gl/wg6JLI",
             "photos": [],
             "garden": []
-        },
-        {
+        });
+        this.seedUsers.push({
             "firstName": "Petkan",
             "lastName": "Draganov",
             "birthDate": "01.09.2014",
             "avatar": "https://goo.gl/wg6JLI",
             "photos": [],
             "garden": []
-        },
-        {
+        });
+        this.seedUsers.push({
             "firstName": "Izdislav",
             "lastName": "Storaro",
             "birthDate": "01.09.2014",
             "avatar": "https://goo.gl/wg6JLI",
             "photos": [],
             "garden": []
-        }]);
+        });
     }
 
     addUser() {

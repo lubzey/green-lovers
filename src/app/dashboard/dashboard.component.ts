@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     this.plantInstancesService.removeAll();
     this.plantInstancesService.seed();
 
-    this.usersService.removeAll();
+    // this.usersService.removeAll();
     this.usersService.seed();
   }
 

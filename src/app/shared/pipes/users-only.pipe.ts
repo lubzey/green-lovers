@@ -8,7 +8,7 @@ import { User } from './../models/user.model';
 })
 export class UsersOnlyPipe implements PipeTransform {
 
-  transform(value: Observable<any[]>): Observable<any[]> {
+  transform(value: any): User {
     return value.switchMap(x => x.filter(x => x instanceof User));
   }
 }
