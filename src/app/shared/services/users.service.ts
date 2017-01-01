@@ -6,8 +6,11 @@ export class UsersService {
   seedUsers: FirebaseListObservable<any[]>;
 
   constructor(private af: AngularFire) {
-    const remove = af.database.list('/users').remove();
     this.seedUsers = af.database.list('/users');
+  }
+
+  removeAll() {
+    this.af.database.list('/users').remove();
   }
 
   seed() {

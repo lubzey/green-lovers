@@ -8,8 +8,11 @@ export class PlantInstancesService {
   plantInstances: FirebaseListObservable<any[]>;
 
   constructor(private af: AngularFire) {
-    const remove = af.database.list('/plant-instances').remove();
     this.seedPlantInstances = af.database.list('/plant-instances');
+  }
+
+  removeAll() {
+    this.af.database.list('/plant-instances').remove();
   }
 
   seed() {

@@ -26,10 +26,17 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.plantInstancesService.seed();
-    this.usersService.seed();    
-
+    this.removeAndSeed();
+    
     this.plantInstances = this.plantInstancesService.getPlants();
+  }
+
+  removeAndSeed() {
+    this.plantInstancesService.removeAll();
+    this.plantInstancesService.seed();
+
+    this.usersService.removeAll();
+    this.usersService.seed();
   }
 
   add() {
