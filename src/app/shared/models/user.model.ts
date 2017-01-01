@@ -6,6 +6,4 @@ export class User {
   lastName: string;
   birthDate: string;
   avatar: any;
-  photos: any[];
-  garden: any[];
 }

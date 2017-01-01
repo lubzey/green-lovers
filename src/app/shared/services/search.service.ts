@@ -17,6 +17,6 @@ export class SearchService {
 
   search(term: string) {
     return this.usersSearch.searchUsers(term);
-      // .merge(this.plantInstancesService.getPlants());
+      // .concat(this.plantInstancesService.getPlants());
   }
 }
