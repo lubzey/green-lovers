@@ -44,6 +44,12 @@ export class PlantInstancesService {
     });
   }
 
+searchUsers(term: string) {
+        return this.seedPlantInstances
+        .map(x => x.filter(x => 
+        x.commonName.toLowerCase().includes(term.toLowerCase())))
+    }
+
   getPlants() {
     return this.seedPlantInstances;
   }

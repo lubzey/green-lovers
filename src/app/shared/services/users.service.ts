@@ -1,61 +1,67 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { User } from './../models/user.model';
 
 @Injectable()
 export class UsersService {
-  seedUsers: FirebaseListObservable<any[]>;
-  seedUser: FirebaseObjectObservable<any>;
-  users: FirebaseListObservable<any[]>;
+    seedUsers: FirebaseListObservable<User[]>;
+    seedUser: FirebaseObjectObservable<User>;
+    users: FirebaseListObservable<User[]>;
 
-  constructor(private af: AngularFire) {
-    this.seedUser = af.database.object('/greenloversclub');
-    this.seedUsers = af.database.list('/users');
-  }
+    constructor(private af: AngularFire) {
+        this.seedUser = af.database.object('/greenloversclub');
+        this.seedUsers = af.database.list('/users');
+    }
 
-  seed() {
-    this.seedUsers.remove
-    this.seedUsers.push({
-      "FirstName": "Gosho",
-      "LastName": "Ivanov",
-      "BirthDate": "01.09.2014",
-      "Avatar": "https://goo.gl/wg6JLI",
-      "Photos": [],
-      "Garden": []
-    });
-    this.seedUsers.push({
-      "FirstName": "Petkan",
-      "LastName": "Draganov",
-      "BirthDate": "01.09.2014",
-      "Avatar": "https://goo.gl/wg6JLI",
-      "Photos": [],
-      "Garden": []
-    });
-    this.seedUsers.push({
-      "FirstName": "Izdislav",
-      "LastName": "Storaro",
-      "BirthDate": "01.09.2014",
-      "Avatar": "https://goo.gl/wg6JLI",
-      "Photos": [],
-      "Garden": []
-    });
-  }
+    seed() {
+        this.seedUsers.push([{
+            "firstName": "Gosho",
+            "lastName": "Ivanov",
+            "birthDate": "01.09.2014",
+            "avatar": "https://goo.gl/wg6JLI",
+            "photos": [],
+            "garden": []
+        },
+        {
+            "firstName": "Petkan",
+            "lastName": "Draganov",
+            "birthDate": "01.09.2014",
+            "avatar": "https://goo.gl/wg6JLI",
+            "photos": [],
+            "garden": []
+        },
+        {
+            "firstName": "Izdislav",
+            "lastName": "Storaro",
+            "birthDate": "01.09.2014",
+            "avatar": "https://goo.gl/wg6JLI",
+            "photos": [],
+            "garden": []
+        }]);
+    }
 
-  addUser() {
-    this.seedUsers.push({
-      "FirstName": "Zeleniq",
-      "LastName": "Hulk",
-      "BirthDate": "01.09.2014",
-      "Avatar": "https://goo.gl/wg6JLI",
-      "Photos": [],
-      "Garden": []
-    });
-  }
+    addUser() {
+        this.seedUsers.push({
+            "FirstName": "Zeleniq",
+            "LastName": "Hulk",
+            "BirthDate": "01.09.2014",
+            "Avatar": "https://goo.gl/wg6JLI",
+            "Photos": [],
+            "Garden": []
+        });
+    }
 
-  getUsers() {
-    return this.seedUsers;
-  }
+    searchUsers(term: string) {
+        return this.seedUsers
+        .map(x => x.filter(x => 
+        x.firstName.toLowerCase().includes(term.toLowerCase())))
+    }
 
-  deleteUser(key: string) {
-    this.seedUsers.remove(key);
-  }
+    getUsers() {
+        return this.seedUsers;
+    }
+
+    deleteUser(key: string) {
+        this.seedUsers.remove(key);
+    }
 }

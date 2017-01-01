@@ -16,7 +16,7 @@ export class SearchService {
     private plantInstancesService: PlantInstancesService) { }
 
   search(term: string) {
-    return this.userSearch.getUsers()
-    .merge( this.plantInstancesService.getPlants());
+    return this.userSearch.searchUsers(term);
+      // .merge(this.plantInstancesService.getPlants());
   }
 }

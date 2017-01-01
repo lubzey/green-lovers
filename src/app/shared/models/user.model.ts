@@ -2,10 +2,10 @@ import { PlantInstance } from './plant.model';
 
 export class User {
 
-  FirstName: string;
-  LastName: string;
-  BirthDate: Date;
-  Avatar: URL;
-  Photos: URL[];
-  Garden: PlantInstance[];
+  firstName: string;
+  lastName: string;
+  birthDate: string;
+  avatar: any;
+  photos: any[];
+  garden: any[];
 }

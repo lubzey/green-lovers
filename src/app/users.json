@@ -1,26 +1,26 @@
 [
     {
-        "FirstName": "Gosho",
-        "LastName": "Ivanov",
-        "BirthDate": "01.09.2014",
-        "Avatar": "https://goo.gl/wg6JLI",
-        "Photos": [],
-        "Garden": []
+        "firstName": "Gosho",
+        "lastName": "Ivanov",
+        "birthDate": "01.09.2014",
+        "avatar": "https://goo.gl/wg6JLI",
+        "photos": [],
+        "garden": []
     },
     {
-        "FirstName": "Petkan",
-        "LastName": "Draganov",
-        "BirthDate": "01.09.2014",
-        "Avatar": "https://goo.gl/wg6JLI",
-        "Photos": [],
-        "Garden": []
+        "firstName": "Petkan",
+        "lastName": "Draganov",
+        "birthDate": "01.09.2014",
+        "avatar": "https://goo.gl/wg6JLI",
+        "photos": [],
+        "garden": []
     },
     {
-        "FirstName": "Izdislav",
-        "LastName": "Storaro",
-        "BirthDate": "01.09.2014",
-        "Avatar": "https://goo.gl/wg6JLI",
-        "Photos": [],
-        "Garden": []
+        "firstName": "Izdislav",
+        "lastName": "Storaro",
+        "birthDate": "01.09.2014",
+        "avatar": "https://goo.gl/wg6JLI",
+        "photos": [],
+        "garden": []
     }
 ]
