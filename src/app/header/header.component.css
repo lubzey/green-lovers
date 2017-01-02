@@ -53,22 +53,14 @@ nav a:hover {
     color: greenyellow;
     text-decoration: underline;
 }
-.profileLink:hover{
-    color: greenyellow;
-    text-decoration: underline;
-}
 .profileImage{
     max-height: 50px;
     border-radius: 3px;
-}
-.profileLink{
-    cursor: pointer;
     margin-right: 10px;
-    display: flex;
-    justify-content: center;   
-    align-items: center;
-    color: white;
 }
 .displayName{
     margin: 5px;
+}
+.active {
+    color: darkgreen !important;
 }
