@@ -18,6 +18,8 @@ import { PlantsWikiComponent } from './plants-wiki/plants-wiki.component';
 
 import { UsersService } from './shared/services/users.service';
 import { PlantInstancesService } from './shared/services/plant-instances.service';
+import { AuthenticationService } from './shared/services/authentication.service';
+
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environments/firebase.config";
 import { SideMenuComponent } from './side-menu/side-menu.component';
@@ -44,7 +46,7 @@ imports: [
     AngularFireModule.initializeApp(firebaseConfig),
     MaterialModule.forRoot(),
   ],
-  providers: [PlantInstancesService, UsersService],
+  providers: [PlantInstancesService, UsersService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 
