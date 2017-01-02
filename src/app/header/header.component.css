@@ -28,6 +28,7 @@ flex: 1 1 auto;
 #logo img {
     background-color: white;
     padding: 5px;
+    border-radius: 3px;
 }
 
 #logo img {
@@ -52,11 +53,11 @@ nav a:hover {
 }
 .profileImage{
     max-height: 50px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 .profileLink{
     cursor: pointer;
-    margin: 10px;
+    margin-right: 10px;
     display: flex;
     justify-content: center;   
     align-items: center;

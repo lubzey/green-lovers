@@ -14,7 +14,7 @@
         <app-search></app-search>
         <a routerLink="/plants" routerLinkActive="active">Users</a>
         <a routerLink="/plants" routerLinkActive="active">Plants</a>
-        <a routerLink="/user/garden" routerLinkActive="active">Garden</a>
+        <a *ngIf="displayName" routerLink="/user/garden" routerLinkActive="active">Garden</a>
 
         <div class="profileLink" *ngIf="displayName" routerLink="/user" routerLinkActive="active">
             <span class="displayName"> Profile </span>
