@@ -1,0 +1,33 @@
+md-toolbar {
+box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14),
+            0 3px 3px -2px rgba(0,0,0,0.12),
+            0 1px 8px 0 rgba(0,0,0,0.2);
+}
+
+nav {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+
+nav app-search {
+    flex: 2 1 auto;
+}
+
+
+#logo {
+text-decoration: none;
+align-items: center;
+line-height: 20px;
+margin-right: 10px;
+}
+
+#logo img {
+height: 30px;
+width: 30px;
+vertical-align: middle;
+position: relative;
+line-height: 20px;
+}
+
+

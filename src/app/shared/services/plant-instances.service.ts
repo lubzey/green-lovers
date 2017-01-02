@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { Observable } from 'rxjs';
-import { PlantInstance } from './../models/plant.model';
+import { PlantInstance } from './../models/plant-instance.model';
 
 @Injectable()
 export class PlantInstancesService {
@@ -48,12 +48,6 @@ export class PlantInstancesService {
       commonName: 'Chilli pepper'
     });
   }
-
-// searchPlants(term: string): Observable<PlantInstance[]> {
-//         return this.seedPlantInstances
-//         .map(x => x.filter(x => 
-//         x.commonName.toLowerCase().includes(term.toLowerCase())))
-//     }
 
   getPlants(term?: string) {
         return term ?

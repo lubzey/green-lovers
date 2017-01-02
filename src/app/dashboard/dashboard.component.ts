@@ -5,7 +5,7 @@ import { PlantInstancesService } from '../shared/services/plant-instances.servic
 import { UsersService } from '../shared/services/users.service';
 
 
-import { PlantInstance } from '../shared/models/plant.model';
+import { PlantInstance } from '../shared/models/plant-instance.model';
 import { User } from '../shared/models/user.model';
 
 @Component({

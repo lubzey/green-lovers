@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MdInputContainer } from '@angular/material';
+import { MdInput } from '@angular/material';
 
-import { SearchService } from './../shared/services/search.service';
 import { PlantInstancesService } from './../shared/services/plant-instances.service';
 import { UsersService } from './../shared/services/users.service';
 
-import { PlantInstance } from './../shared/models/plant.model';
+import { PlantInstance } from './../shared/models/plant-instance.model';
 import { User } from './../shared/models/user.model';
 
 import { Observable } from 'rxjs';

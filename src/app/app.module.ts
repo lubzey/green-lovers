@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app.routing';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app-component/app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +20,7 @@ import { UsersService } from './shared/services/users.service';
 import { PlantInstancesService } from './shared/services/plant-instances.service';
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environments/firebase.config";
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,16 @@ import { firebaseConfig } from "../environments/firebase.config";
     UserGardenComponent,
     UserPhotosComponent,
     PlantsWikiComponent,
+    SideMenuComponent,
 ],
 imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    MaterialModule.forRoot(),
   ],
-  providers: [PlantInstancesService, UsersService,],
+  providers: [PlantInstancesService, UsersService],
   bootstrap: [AppComponent]
 })
 

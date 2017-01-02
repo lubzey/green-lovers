@@ -1,10 +1,9 @@
-<div class="container">
-
-<nav>
-    <a routerLink="/home" routerLinkActive="active">Green Lovers</a>
-    <app-search></app-search>
-    <a routerLink="/plants" routerLinkActive="active">Plants</a>
-    <a routerLink="/user" routerLinkActive="active">Profile</a>
-</nav>
-
-</div>
+<md-toolbar color="primary">
+    <nav>
+        <a id="logo" routerLink="/home" routerLinkActive="active">
+            <img src="https://woocommerce.com/wp-content/uploads/2016/06/black-square-logo-200px.png?w=200" alt="logo">
+        </a>
+        <app-search></app-search>
+        <a id="profileLink" routerLink="/user" routerLinkActive="active">Profile</a>
+    </nav>
+</md-toolbar>

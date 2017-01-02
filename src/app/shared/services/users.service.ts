@@ -15,6 +15,7 @@ export class UsersService {
     }
 
     seed() {
+        this.removeAll();
         this.seedUsers.push({
             "firstName": "Gosho",
             "lastName": "Ivanov",
@@ -41,6 +42,10 @@ export class UsersService {
         });
     }
 
+    removeAll() {
+        this.af.database.list('/users').remove();
+    }
+
     addUser() {
         this.seedUsers.push({
             "FirstName": "Zeleniq",
@@ -51,12 +56,6 @@ export class UsersService {
             "Garden": []
         });
     }
-
-    // searchUsers(term: string): Observable<User[]> {
-    //     return this.seedUsers
-    //         .map(x => x.filter(x =>
-    //             x.firstName.toLowerCase().includes(term.toLowerCase())))
-    // }
 
     getUsers(term?: string) {
         return term ?

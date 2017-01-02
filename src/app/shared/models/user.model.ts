@@ -1,4 +1,4 @@
-import { PlantInstance } from './plant.model';
+import { PlantInstance } from './plant-instance.model';
 
 export class User {
 
