@@ -7,3 +7,8 @@ app-side-menu {
     position: relative;
     top: 70px;
 }
+
+.container {
+    padding-left: 10%;
+    width: 80%;
+}
