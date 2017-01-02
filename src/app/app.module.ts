@@ -19,6 +19,8 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 
 import { UsersService } from './shared/services/users.service';
 import { PlantInstancesService } from './shared/services/plant-instances.service';
+import { AuthenticationService } from './shared/services/authentication.service';
+
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environments/firebase.config";
 
@@ -44,7 +46,7 @@ imports: [
     AngularFireModule.initializeApp(firebaseConfig),
     MaterialModule.forRoot(),
   ],
-  providers: [PlantInstancesService, UsersService],
+  providers: [PlantInstancesService, UsersService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 

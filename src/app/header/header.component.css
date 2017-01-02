@@ -10,6 +10,9 @@ nav {
 display: inline-flex;
 flex: 1 1 auto;
 align-items: center;
+color: white;
+margin: 5px;
+text-decoration: none;
 }
 
 app-search {
@@ -17,11 +20,21 @@ display: inline-flex;
 flex: 1 1 auto;
 }
 
-#logo {
+/*#logo {
 text-decoration: none;
 align-items: center;
 line-height: 20px;
 margin-right: 10px;
+}*/
+#logo {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#logo img {
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 #logo img {
@@ -31,4 +44,31 @@ vertical-align: middle;
 position: relative;
 line-height: 20px;
 }
-
+nav a {
+    color: white;
+    margin: 5px;
+    text-decoration: none;
+}
+nav a:hover {
+    color: greenyellow;
+    text-decoration: underline;
+}
+.profileLink:hover{
+    color: greenyellow;
+    text-decoration: underline;
+}
+.profileImage{
+    max-height: 50px;
+    border-radius: 3px;
+}
+.profileLink{
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    color: white;
+}
+.displayName{
+    margin: 5px;
+}
