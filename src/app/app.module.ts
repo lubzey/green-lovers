@@ -15,12 +15,12 @@ import { UserEditComponent } from './user-profile/user-edit/user-edit.component'
 import { UserGardenComponent } from './user-profile/user-garden/user-garden.component';
 import { UserPhotosComponent } from './user-profile/user-photos/user-photos.component';
 import { PlantsWikiComponent } from './plants-wiki/plants-wiki.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 import { UsersService } from './shared/services/users.service';
 import { PlantInstancesService } from './shared/services/plant-instances.service';
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environments/firebase.config";
-import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [

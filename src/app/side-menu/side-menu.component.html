@@ -1,14 +1,9 @@
 <md-sidenav-container>
-    <md-sidenav #start (open)="closeStartButton.focus()">
-      Start Sidenav.
-      <br>
-      <button md-button #closeStartButton (click)="start.close()">Close</button>
-    </md-sidenav>
-    <md-sidenav #end align="end">
-      End Sidenav.
-      <button md-button (click)="end.close()">Close</button>
-    </md-sidenav>
+  <md-sidenav #start (toggle)="start.toggle()">
+  <li *ngFor="let option of menuOptions">
+    <a href="">{{option}}</a>
+    </li>
+  </md-sidenav>
+  <ng-content></ng-content>
 
-<ng-content select="card-body"></ng-content>
-
-  </md-sidenav-container>
+</md-sidenav-container>

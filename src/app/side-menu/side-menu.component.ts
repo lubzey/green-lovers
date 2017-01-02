@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
+@ViewChild('start') start;
+
+menuOptions = ["Home", "Plants", "Garden",];
+
   constructor() { }
 
   ngOnInit() {
   }
+
+toggle() : void {
+this.start.toggle();
+}
 
 }

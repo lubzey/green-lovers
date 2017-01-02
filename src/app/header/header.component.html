@@ -1,13 +1,6 @@
 <md-toolbar color="primary">
     <nav>
-        <app-side-menu>
-            My regular content. This will be moved into the proper DOM at runtime.
-            <button md-button (click)="start.open()">Open start sidenav</button>
-            <button md-button (click)="end.open()">Open end sidenav</button>
-        </app-side-menu>
-        <a href="">
-            <i id="menu-button" class="material-icons">menu</i>
-        </a>
+        <span (click)="callToSideMenu()"><i id="menu-button" class="material-icons">menu</i></span>
         <a id="logo" routerLink="/home" routerLinkActive="active">
             <img src="https://woocommerce.com/wp-content/uploads/2016/06/black-square-logo-200px.png?w=200" alt="logo">
         </a>

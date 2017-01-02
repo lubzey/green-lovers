@@ -10,12 +10,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserEditComponent } from './user-profile/user-edit/user-edit.component';
 import { UserGardenComponent } from './user-profile/user-garden/user-garden.component';
 import { UserPhotosComponent } from './user-profile/user-photos/user-photos.component';
-import { SideMenuComponent } from './side-menu/side-menu.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: DashboardComponent },
-    { path: 'menu', component: SideMenuComponent },
     { path: 'login', component: LoginComponent },
     { path: 'plants', component: PlantsWikiComponent },
     { path: 'user', component: UserProfileComponent },

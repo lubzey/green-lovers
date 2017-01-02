@@ -1,5 +1,5 @@
-<app-header></app-header>
-
-<router-outlet></router-outlet>
-
+<app-header (sideMenuEvent)="sideMenu.toggle()"></app-header>
+<app-side-menu #sideMenu>
+    <router-outlet></router-outlet>
+</app-side-menu>
 <app-footer></app-footer>
