@@ -11,7 +11,7 @@ import { PlantInstance } from '../shared/models/plant-instance.model';
   styles: [require('./plants-wiki.component.css')]
 })
 export class PlantsWikiComponent implements OnInit {
-  plantInstances: Observable<PlantInstance[]>;
+  plantInstances: PlantInstance[];
   filteredPlantInstances: Observable<PlantInstance[]>;
 
   constructor(private plantInstancesService: PlantInstancesService) { }
@@ -21,6 +21,10 @@ export class PlantsWikiComponent implements OnInit {
   }
 
   getPlants() {
-    this.plantInstances = this.plantInstancesService.getPlants();
+    this.plantInstancesService.getPlants().subscribe(plantInstances => {
+      this.plantInstances = plantInstances;
+      console.log(this.plantInstances);
+    });
+    
   }
 }

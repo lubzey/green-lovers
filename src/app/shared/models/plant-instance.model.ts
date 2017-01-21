@@ -1,6 +1,6 @@
 export class PlantInstance {
   NickName: string;
-  BirthDate: string;
+  BirthDate?: string;
   OwnerName: string;
   CommonName: string;
 }

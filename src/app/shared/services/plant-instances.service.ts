@@ -7,17 +7,41 @@ import { PlantInstance } from './../models/plant-instance.model';
 export class PlantInstancesService {
   seedPlantInstances: FirebaseListObservable<any[]>;
   seedPlant: FirebaseObjectObservable<any>;
-  plantInstances: FirebaseListObservable<any[]>;
+  plantInstances: FirebaseListObservable<PlantInstance[]>;
 
   constructor(private af: AngularFire) {
-    this.seedPlantInstances = af.database.list('/plant-instances');
   }
 
   removeAll() {
     this.af.database.list('/plant-instances').remove();
   }
 
+  getPlants(term?: string) {
+    this.plantInstances = this.af.database.list('/plant-instances');
+
+    return term ?
+      this.plantInstances
+        .map(x => x.filter(x =>
+          x.commonName.toLowerCase()
+            .includes(term.toLowerCase())))
+      : this.plantInstances;
+  }
+
+  changePlantOwner(key: string, newOwner: string) {
+    this.plantInstances.update(key, { owner: newOwner })
+      .then(x => console.log('Plant edited'))
+      .catch(error => console.log(error));
+  }
+
+  deletePlantInstance(key: string) {
+    this.plantInstances.remove(key)
+      .then(x => console.log('Plant removed'))
+      .catch(error => console.log(error));
+  }
+
   seed() {
+    this.seedPlantInstances = this.af.database.list('/plant-instances');
+
     this.seedPlantInstances.push({
       name: 'vercheto',
       birthdate: '01.09.2014',
@@ -47,26 +71,5 @@ export class PlantInstancesService {
       owner: 'lubzey',
       commonName: 'Chilli pepper'
     });
-  }
-
-  getPlants(term?: string) {
-        return term ?
-            this.seedPlantInstances
-                .map(x => x.filter(x =>
-                    x.commonName.toLowerCase()
-                        .includes(term.toLowerCase())))
-            : this.seedPlantInstances;
-    }
-
-  changePlantOwner(key: string, newOwner: string) {
-    this.seedPlantInstances.update(key, { owner: newOwner })
-    .then(x => console.log('Plant edited'))
-    .catch(error => console.log(error));
-  }
-
-  deletePlantInstance(key: string) {
-    this.seedPlantInstances.remove(key)
-    .then(x => console.log('Plant removed'))
-    .catch(error => console.log(error));
   }
 }
