@@ -14,6 +14,7 @@
   "dependencies": {
     "@angular/common": "^2.4.1",
     "@angular/compiler": "^2.4.1",
+    "@angular/compiler-cli": "^2.4.1",
     "@angular/core": "^2.4.1",
     "@angular/forms": "^2.4.1",
     "@angular/http": "^2.4.1",
@@ -35,7 +36,7 @@
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "2.2.3",
+    "@angular/compiler-cli": "^2.4.1",
     "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
